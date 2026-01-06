@@ -43,6 +43,7 @@ switch ($method) {
         $data = file_get_contents("php://input");
         parse_str($data, $request_data);
         $id = $request_data['id'] ?? null;
+        // $id = $_REQUEST['id'] ?? null;
         if ($id) {
             $sql = "DELETE FROM blog WHERE id = ?";
             $stmt = $condb->prepare($sql);
